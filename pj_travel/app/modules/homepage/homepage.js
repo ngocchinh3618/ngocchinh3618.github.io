@@ -1,1 +1,0 @@
-angular.module("myApp.homepage",["ui.router","myApp.homepage.controllers","myApp.homepage.services","myApp.homepage.filters"])
