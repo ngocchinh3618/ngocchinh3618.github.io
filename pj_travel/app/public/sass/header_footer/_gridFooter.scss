@@ -1,0 +1,14 @@
+@mixin gridFooter($grid-area,$inner1,$inner2){
+  grid-area: $grid-area;
+  display:grid;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+  $inner1
+  $inner2;
+}
+@mixin footer-second($color){
+  background-color:$color;
+  color: white;
+  font-size: 1.3rem;
+  padding:6px;
+}

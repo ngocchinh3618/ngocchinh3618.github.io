@@ -1,0 +1,120 @@
+.head{
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  grid-template-rows: auto 65px 450px;
+  grid-template-areas:
+  "menu1 menu1 menu1 menu1 menu1 menu1 menu1 menu1 menu1 menu1 menu1 menu1"
+  "menu2 menu2 menu2 menu2 menu2 menu2 menu2 menu2 menu2 menu2 menu2 menu2"
+  "carousel carousel carousel carousel carousel carousel carousel carousel carousel carousel carousel carousel"
+  ;
+}
+.menu1{
+  grid-area: menu1;
+  display: flex;
+  background-color: #006400;
+  color: white;
+  justify-content: space-around;
+  .menuleft{
+    margin-right:auto;
+    margin-left:80px;
+    padding: 12px;
+    > span{
+      padding-right:13px;
+      font-weight: 600;
+      >.sdt{
+        color: #ffff66;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .menuright{
+    margin-right: 80px;
+    margin-top: 10px;
+  > 
+    a {
+      display:inline-block;
+      color: white;
+      text-decoration: none;
+      padding: 5px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+  }
+}
+.menu2{
+  display: grid;
+  grid-area: menu2;
+  box-shadow: 5px 5px 5px #aaaaaa;
+  // border: thin black solid;
+  grid-template-columns:repeat(12,1fr);
+  grid-template-areas:
+  "logo logo logo tour tour tour tour tour tour tour tour tour";
+  .logo{
+    grid-area: logo;
+    justify-self: center;
+    img{
+      width:200px;
+    }
+  }
+  .tour{
+    grid-area: tour;
+    justify-self: center;
+    align-self:center; 
+    ul{
+      list-style-type: none;
+      color: #006400;
+      // text-align: center;
+    }
+    li{
+      display: inline-block;
+      padding:10px;
+      position:relative;
+      &:hover .sub-menu{
+        display:block;
+        background-color:white;
+      }
+    }
+    a{
+      text-decoration: none;
+      display:block;
+      color: #006400;
+      font-size: 0.9rem;
+      font-weight: 600;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .sub-menu{
+      z-index:2;
+      position: absolute;
+      display:none;
+      width:800px;
+      left:-500px;
+      top:40px;
+      box-shadow:5px 5px 6px 1px #aaaaaa;
+      > li {
+        width: 24.2%;
+        > ul {
+          > li{
+            display:block;
+            text-transform: lowercase;
+            font-size: 0.8rem;
+            line-height: 0.1rem;
+            >a{
+              font-weight: 500;
+              &:hover{
+                color:black;
+              }
+            }
+            
+          }
+        }
+      }
+    }
+  }
+}
+.carousel{
+  grid-area: carousel;
+  img{
+    width:100%;
+    height:450px;
+  }
+}
