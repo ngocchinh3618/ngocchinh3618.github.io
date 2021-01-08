@@ -1,0 +1,32 @@
+<div class="btnn">
+  <a ng-click="closePost()"> <i style="font-size:16px" class="fa">&#xf060;</i> Quay lại</a>
+</div>
+<div class="sanpham">
+  <div class="prd_main sanpham1" style="flex-basis: 400px" >
+    <img ng-src="{{chitiet.hinh}}">
+  </div>
+  <div class="text sanpham1" style="flex-basis: 700px">
+    <h3><b>{{chitiet.ten}}</b></h3>
+    <p><b>{{chitiet.gia}}</b></p>
+    <p>{{chitiet.mota}}</p>
+    <div class="btnn add">
+      <a ng-click="add()" href=""> Cho vào giỏ hàng <i class="fas fa-arrow-right"></i> </a> 
+      <a ui-sref="giohang" style="margin-left: 10px !important;"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+  </div>
+</div>
+<article>
+<div class="tiltle">
+<h2>CÓ THỂ BẠN THÍCH</h2>
+
+</div>
+<div class="content__produce">
+<div class="item1" ng-repeat="i in sp track by $index" ng-if="i.loai == chitiet.loai && i.id != chitiet.id">
+  <a ui-sref="chitiet({id:i.id})">
+    <img ng-src="{{i.hinh}}">
+    <h3><b>{{i.ten}}</b></h3>
+    <p>{{i.gia}}</p>
+  </a>
+</div>
+</div>
+</article>

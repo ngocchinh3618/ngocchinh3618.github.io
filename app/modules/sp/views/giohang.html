@@ -1,0 +1,29 @@
+<div class="c container">
+  <div class="btnn">
+    <a ng-click="closePost()"> <i style="font-size:16px" class="fa">&#xf060;</i> Quay lại</a>
+  </div>
+  <div class="button add" ng-init="sum=0">
+    <div class="dathang">
+      <p>Thành tền: {{sum}}đ</p>
+    </div>
+    <a href='#' ng-click='tong()'> Tinh tien </a>
+  </div>
+  
+  <div class="cards" ng-repeat="i in giohang track by $index">
+    <span class="hinhsp">
+      <a href="#">
+        <img  ng-src={{i.hinh}} alt="">
+      </a>
+    </span>
+    <span class="tensp">
+      <span>{{i.ten}}</span>
+      <a ng-click='del($index)' href='#'> xóa</a>
+    </span>
+    <span class="giasp">
+      <span>{{i.gia}}</span>
+      <input type="number" style="width: 100px;" ng-model='i.sl' ng-value='i.sl' ng-change="change($index)" min="0">
+    </span>
+  </div>
+</div>
+
+<div style="clear: both;"></div>
