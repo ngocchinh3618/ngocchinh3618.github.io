@@ -1,0 +1,65 @@
+
+<form name="dangky"  class="form_container" novalidate>
+<h1>Đăng ký làm thành viên</h1>
+<p>Điền thông tin của bạn vào đây.</p>
+<hr>
+
+<label for="name"><b>Tên</b></label>
+<input type="text" name="name" id="name" placeholder="Nhập tên" ng-model="user.name" ng-required="true"
+    ng-minlength="2" />
+
+<div class="error-message" ng-show="dangky.name.$dirty && dangky.name.$error.required">Yêu cầu nhập tên</div>
+
+<div class="error-message" ng-show="dangky.name.$dirty && dangky.name.$error.minlength">Tên tối thiểu 2 chữ cái
+</div>
+
+
+<label for="email"><b>Email</b></label>
+<input type="text" placeholder="Nhập Email" name="email" id="email" ng-required="true" ng-model="user.email"
+    ng-pattern="/^\w{5,}@(yahoo|gmail).com$/">
+
+<div class="error-message" ng-show="dangky.email.$dirty && dangky.email.$error.required">Yêu cầu nhập email</div>
+
+<div class="error-message" ng-show="dangky.email.$dirty && dangky.email.$invalid">Xin nhập email hợp lệ và có 5 chữ
+    trở lên (vd: email@gmail.com)
+</div>
+
+<label for="psw"><b>Password</b></label>
+<input type="password" placeholder="Nhập Password" name="psw" id="psw" ng-required="true" ng-minlength="6"
+    ng-model="user.psw">
+
+<div class="error-message" ng-show="dangky.psw.$dirty && dangky.psw.$error.required">Yêu cầu nhập password</div>
+
+<div class="error-message" ng-show="dangky.psw.$dirty && dangky.psw.$error.minlength">Độ dài password chưa đủ
+</div>
+
+<label for="psw-repeat"><b>Nhập lại Password</b></label>
+<input type="password" placeholder="Nhập lại Password" name="pswrepeat" id="psw-repeat" ng-required="true"
+    ng-minlength="6" ng-model="user.rpsw">
+
+
+<div class="error-message" ng-show="dangky.pswrepeat.$dirty && dangky.pswrepeat.$error.required">Yêu cầu nhập
+    password</div>
+
+<div class="error-message" ng-show="dangky.pswrepeat.$dirty && dangky.pswrepeat.$error.minlength">Độ dài password
+    chưa đủ
+</div>
+<div class="error-message" ng-show="user.psw != user.rpsw">Password không khớp
+</div>
+
+<label for="phoneNumber"><b>Sđt</b></label>
+<input type="text" name="phoneNumber" id="phoneNumber" ng-model="user.phone" ng-maxlength="10" ng-minlength="10"
+    ng-pattern="/^\d{10}$/" placeholder="Nhập Sđt" />
+<div class="error-message" ng-show="dangky.phoneNumber.$dirty && dangky.phoneNumber.$invalid">Số điện thoại hợp lệ
+    gồm 10 số</div>
+<hr>
+<button type="submit" id="myBtn" ng-disabled="dangky.$invalid || (user.psw != user.rpsw)" class="registerbtn" ng-click="saveUser()"><b>Đăng ký</b></button>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <!-- <span class="close">&times;</span> -->
+        <p>Chúc mừng bạn đã đăng ký thành công</p>
+        <p>Bạn sẽ được đưa đến trang chủ trong <span id="countdown">3</span> giây</p>
+    </div>
+</div>
+</form>
