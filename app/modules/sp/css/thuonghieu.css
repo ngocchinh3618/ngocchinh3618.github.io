@@ -5,7 +5,7 @@
 }
 .section-header{
   position: relative;
-  background-image:url('/modules/sp/images/1.png');
+  background-image:url('modules/sp/images/1.png');
   background-repeat: no-repeat;
   margin-top: 160px;
   height: 400px;
@@ -18,7 +18,7 @@
 .content-space-between{
   height:850px;
   width: 100%;
-  background-image: url('/modules/sp/images/3.png');
+  background-image: url('modules/sp/images/3.png');
   background-position: 170px 0px;
   position: relative;
   background-repeat: no-repeat;
